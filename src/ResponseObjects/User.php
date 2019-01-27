@@ -19,7 +19,7 @@ class User
     private $login;
     /** @var int */
     private $color;
-    /** @var string */
+    /** @var string|null */
     private $sex;
     /** @var string */
     private $avatar;
@@ -43,7 +43,7 @@ class User
     public function __construct(
         string $login,
         int $color,
-        string $sex,
+        ?string $sex,
         string $avatar,
         UserDetails $details,
         UserCounts $counts,
@@ -118,7 +118,7 @@ class User
         return $this->color;
     }
 
-    public function getSex(): string
+    public function getSex(): ?string
     {
         return $this->sex;
     }

@@ -45,13 +45,13 @@ class Link
     private $hot;
     /** @var Comment[] */
     private $comments;
-    /** @var bool */
+    /** @var string */
     private $userVote;
     /** @var bool */
     private $userFavourite;
     /** @var bool */
     private $userObserve;
-    /** @var bool */
+    /** @var array */
     private $userLists;
     /** @var bool */
     private $recommended;
@@ -121,11 +121,11 @@ class Link
         bool $canVote,
         bool $hot,
         array $comments,
-        bool $userVote,
-        bool $userFavourite,
-        bool $userObserve,
-        bool $userLists,
-        bool $recommended,
+        ?string $userVote,
+        ?bool $userFavourite,
+        ?bool $userObserve,
+        ?array $userLists,
+        ?bool $recommended,
         ?string $app,
         ?bool $hasOwnContent = null,
         ?Info $info = null,
@@ -240,27 +240,27 @@ class Link
         return $this->comments;
     }
 
-    public function isUserVote(): bool
+    public function getUserVote(): ?string
     {
         return $this->userVote;
     }
 
-    public function isUserFavourite(): bool
+    public function isUserFavourite(): ?bool
     {
         return $this->userFavourite;
     }
 
-    public function isUserObserve(): bool
+    public function isUserObserve(): ?bool
     {
         return $this->userObserve;
     }
 
-    public function isUserLists(): bool
+    public function getUserLists(): ?array
     {
         return $this->userLists;
     }
 
-    public function isRecommended(): bool
+    public function isRecommended(): ?bool
     {
         return $this->recommended;
     }

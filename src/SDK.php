@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace XzSoftware\WykopSDK;
 
 use GuzzleHttp\Client as HttpClient;
+use XzSoftware\WykopSDK\Entries\Entries;
 use XzSoftware\WykopSDK\Profile\Profiles;
 use XzSoftware\WykopSDK\UserManagement\UserManagement;
 
@@ -42,13 +43,33 @@ class SDK
         );
     }
 
+    /**
+     * UserManagment method - Login, WykopConnect handling
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Login/
+     * @return UserManagement
+     */
     public function auth(): UserManagement
     {
         return new UserManagement($this->client);
     }
 
+    /**
+     * Profiles managment
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Profiles/
+     * @return Profiles
+     */
     public function profiles(): Profiles
     {
         return new Profiles($this->client);
+    }
+
+    /**
+     * Entries managment
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Entries/
+     * @return Entries
+     */
+    public function entries(): Entries
+    {
+        return new Entries($this->client);
     }
 }

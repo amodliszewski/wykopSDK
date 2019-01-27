@@ -27,6 +27,16 @@ abstract class AbstractObject implements ApiObjectInterface
         return array_values($data);
     }
 
+    public function setFullDataMode()
+    {
+        $this->urlParams['data'] = 'full';
+    }
+
+    public function setCompactedDataMode()
+    {
+        unset($this->urlParams['data']);
+    }
+
     public function has($param): bool
     {
         return !empty($this->postParams[$param]) || !empty($this->urlParams[$param]);
