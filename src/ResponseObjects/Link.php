@@ -69,9 +69,10 @@ class Link
     public static function buildFromRaw(array $data): Link
     {
         $comments = [];
-
-        foreach ($data['comments'] as $comment) {
-            $comments[] = Comment::buildFromRaw($comment);
+        if (isset($data['comments'])) {
+            foreach ($data['comments'] as $comment) {
+                $comments[] = Comment::buildFromRaw($comment);
+            }
         }
 
         return new Link(
@@ -115,7 +116,7 @@ class Link
         int $relatedCount,
         \DateTime $createdAt,
         User $author,
-        string $preview,
+        ?string $preview,
         bool $plus18,
         string $status,
         bool $canVote,
@@ -210,7 +211,7 @@ class Link
         return $this->author;
     }
 
-    public function getPreview(): string
+    public function getPreview(): ?string
     {
         return $this->preview;
     }

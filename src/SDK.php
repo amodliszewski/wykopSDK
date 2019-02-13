@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace XzSoftware\WykopSDK;
 
 use GuzzleHttp\Client as HttpClient;
+use XzSoftware\WykopSDK\AddLink\AddLink;
 use XzSoftware\WykopSDK\Entries\Entries;
 use XzSoftware\WykopSDK\Profile\Profiles;
 use XzSoftware\WykopSDK\UserManagement\UserManagement;
@@ -72,4 +73,15 @@ class SDK
     {
         return new Entries($this->client);
     }
+
+    /**
+     * AddLink module
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Addlink/
+     * @return AddLink
+     */
+    public function addLink(): AddLink
+    {
+        return new AddLink($this->client);
+    }
+
 }

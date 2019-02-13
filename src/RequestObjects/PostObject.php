@@ -13,6 +13,13 @@ namespace XzSoftware\WykopSDK\RequestObjects;
 
 abstract class PostObject extends AbstractObject
 {
+    protected $files = [];
+
+    public function getFiles(): array
+    {
+        return $this->files;
+    }
+
     public function setAppKey(string $appKey): void
     {
         $this->urlParams['appkey'] = $appKey;

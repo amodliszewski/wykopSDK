@@ -13,6 +13,7 @@ namespace XzSoftware\WykopSDK\Profile;
 
 use XzSoftware\WykopSDK\Client;
 
+use XzSoftware\WykopSDK\Entries\Response\Entries as EntriesResponse;
 use XzSoftware\WykopSDK\Profile\Request\Actions;
 use XzSoftware\WykopSDK\Profile\Request\AddedLinks;
 use XzSoftware\WykopSDK\Profile\Request\Badges;
@@ -33,7 +34,6 @@ use XzSoftware\WykopSDK\Profile\Request\Related;
 use XzSoftware\WykopSDK\Profile\Response\Actions as ActionsResponse;
 use XzSoftware\WykopSDK\Profile\Response\Badges as BadgesResponse;
 use XzSoftware\WykopSDK\Profile\Response\Comments as CommentsResponse;
-use XzSoftware\WykopSDK\Profile\Response\Entries as EntriesResponse;
 use XzSoftware\WykopSDK\Profile\Response\Links;
 use XzSoftware\WykopSDK\Profile\Response\Related as RelatedResponse;
 use XzSoftware\WykopSDK\Profile\Response\Status;

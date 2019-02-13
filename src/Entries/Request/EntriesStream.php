@@ -5,28 +5,27 @@ declare(strict_types=1);
  * Smart code for smart wallet
  * http://xzsoftware.pl
  * User adrianmodliszewski
- * Date: 27/01/2019
- * Time: 21:51
+ * Date: 28/01/2019
+ * Time: 18:55
  */
 
-namespace XzSoftware\WykopSDK\Profile\Request;
+namespace XzSoftware\WykopSDK\Entries\Request;
 
 use XzSoftware\WykopSDK\Entries\Builder\EntriesBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
 
-class EntriesComments extends GetObject
+class EntriesStream extends GetObject
 {
-    private $login;
 
-    public function __construct(string $login, ?int $page = null)
+    public function __construct(int $id = null, int $page = null)
     {
-        $this->login = $login;
+        if (!empty($id)) $this->setId($id);
         if (!empty($page)) $this->setPage($page);
     }
 
-    public function setLogin(string $login): self
+    public function setId(int $id): self
     {
-        $this->login = $login;
+        $this->urlParams['firstid'] = $id;
 
         return $this;
     }
@@ -34,16 +33,18 @@ class EntriesComments extends GetObject
     public function setPage(int $page): self
     {
         $this->urlParams['page'] = $page;
+
+        return $this;
     }
 
     public function getPrefix(): string
     {
-        return 'Profiles/EntriesComments/' . $this->login . '/';
+        return 'Entries/Stream/';
     }
 
     public function isValid(): bool
     {
-        return !empty($this->login);
+        return true;
     }
 
     public function getResponseBuilder(): EntriesBuilder

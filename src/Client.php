@@ -17,6 +17,7 @@ use XzSoftware\WykopSDK\Exceptions\ValidationException;
 use XzSoftware\WykopSDK\RequestObjects\ApiObjectInterface;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
 use XzSoftware\WykopSDK\Exceptions\ApiException;
+use XzSoftware\WykopSDK\RequestObjects\PostObject;
 
 class Client
 {
@@ -62,14 +63,38 @@ class Client
     /**
      * @throws ApiException
      */
-    protected function create(ApiObjectInterface $object): array
+    protected function create(PostObject $object): array
     {
+        $multipart = [];
+        foreach ($object->getFiles() as $filename => $file) {
+            $multipart[] = [
+                'name' => 'filename',
+                'contents' => $file
+            ];
+        }
+
+        foreach ($object->getPostParams() as $paramname => $param) {
+            if (is_array($param)) {
+                foreach ($param as $key => $value) {
+                    $multipart[] = [
+                        'name' => $paramname . '[' . $key . ']',
+                        'contents' => $value
+                    ];
+                }
+            } else {
+                $multipart[] = [
+                    'name' => $paramname,
+                    'contents' => $param
+                ];
+            }
+        }
+
         return $this->handleResponse(
             $this->httpClient->post($this->buildUrl($object), [
                 'headers' => [
                     'apisign' => $this->signer->getSignData($object),
                 ],
-                'form_params' => $object->getPostParams()
+                'multipart' => $multipart
             ])
         );
     }

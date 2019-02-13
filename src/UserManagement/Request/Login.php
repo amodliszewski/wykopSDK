@@ -16,14 +16,10 @@ use XzSoftware\WykopSDK\RequestObjects\PostObject;
 
 class Login extends PostObject
 {
-    public function __construct(?string $login, ?string $password = null, ?string $accountKey = null)
+    public function __construct(?string $login, ?string $accountKey = null)
     {
         if (!empty($login)) {
             $this->setLogin($login);
-        }
-
-        if (!empty($password)) {
-            $this->setPassword($password);
         }
 
         if (!empty($accountKey)) {
@@ -47,12 +43,6 @@ class Login extends PostObject
         return $this;
     }
 
-    public function setPassword(string $password): self {
-        $this->postParams['password'] = $password;
-
-        return $this;
-    }
-
     public function setAccountKey(string $accountKey): self {
         $this->postParams['accountkey'] = $accountKey;
 
@@ -61,16 +51,7 @@ class Login extends PostObject
 
     public function isValid(): bool
     {
-        if ($this->has('login') &&
-            (
-                $this->has('password') ||
-                $this->has('accountkey')
-            )
-        ) {
-            return true;
-        }
-
-        return false;
+        return $this->has('login') && $this->has('accountkey');
     }
 
     public function getResponseBuilder(): LoginBuilder

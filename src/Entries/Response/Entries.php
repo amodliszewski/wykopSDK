@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Smart code for smart wallet
  * http://xzsoftware.pl
  * User adrianmodliszewski
- * Date: 27/01/2019
- * Time: 18:52
+ * Date: 28/01/2019
+ * Time: 18:55
  */
 
-namespace XzSoftware\WykopSDK\Profile\Response;
+namespace XzSoftware\WykopSDK\Entries\Response;
 
 use XzSoftware\WykopSDK\ResponseObjects\Entry;
 use XzSoftware\WykopSDK\ResponseObjects\Pagination;
