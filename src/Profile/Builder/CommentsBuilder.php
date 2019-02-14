@@ -26,7 +26,7 @@ class CommentsBuilder
 
         return new Comments(
             $actions,
-            Pagination::buildFromRaw($data['pagination'])
+            Pagination::buildFromRaw(!empty($data['pagination']) ? $data['pagination'] : [])
         );
     }
 }

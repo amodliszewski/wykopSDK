@@ -5,26 +5,26 @@ declare(strict_types=1);
  * Smart code for smart wallet
  * http://xzsoftware.pl
  * User adrianmodliszewski
- * Date: 27/01/2019
- * Time: 21:59
+ * Date: 14/02/2019
+ * Time: 18:58
  */
 
-namespace XzSoftware\WykopSDK\Profile\Builder;
+namespace XzSoftware\WykopSDK\Links\Builder;
 
-use XzSoftware\WykopSDK\Profile\Response\Related;
+use XzSoftware\WykopSDK\Links\Response\Links;
+use XzSoftware\WykopSDK\ResponseObjects\Link;
 use XzSoftware\WykopSDK\ResponseObjects\Pagination;
-use XzSoftware\WykopSDK\ResponseObjects\RelatedLink;
 
-class RelatedLinksBuilder
+class LinksBuilder
 {
-    public function build(array $data): Related
+    public function build(array $data): Links
     {
         $links = [];
         foreach($data['data'] as $link) {
-            $links[] = RelatedLink::buildFromRaw($link);
+            $links[] = Link::buildFromRaw($link);
         }
 
-        return new Related(
+        return new Links(
             $links,
             Pagination::buildFromRaw(!empty($data['pagination']) ? $data['pagination'] : [])
         );

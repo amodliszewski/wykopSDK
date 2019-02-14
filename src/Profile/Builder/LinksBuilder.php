@@ -26,7 +26,7 @@ class LinksBuilder
 
         return new Links(
             $links,
-            Pagination::buildFromRaw($data['pagination'])
+            Pagination::buildFromRaw(!empty($data['pagination']) ? $data['pagination'] : [])
         );
     }
 }

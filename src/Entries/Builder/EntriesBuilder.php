@@ -26,7 +26,7 @@ class EntriesBuilder
 
         return new Entries(
             $entries,
-            Pagination::buildFromRaw($data['pagination'])
+            Pagination::buildFromRaw(!empty($data['pagination']) ? $data['pagination'] : [])
         );
     }
 }

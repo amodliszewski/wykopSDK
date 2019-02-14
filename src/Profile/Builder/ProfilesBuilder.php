@@ -26,7 +26,7 @@ class ProfilesBuilder
 
         return new Users(
             $users,
-            Pagination::buildFromRaw($data['pagination'])
+            Pagination::buildFromRaw(!empty($data['pagination']) ? $data['pagination'] : [])
         );
     }
 }

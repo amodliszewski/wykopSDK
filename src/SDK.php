@@ -14,6 +14,8 @@ namespace XzSoftware\WykopSDK;
 use GuzzleHttp\Client as HttpClient;
 use XzSoftware\WykopSDK\AddLink\AddLink;
 use XzSoftware\WykopSDK\Entries\Entries;
+use XzSoftware\WykopSDK\Hits\Hits;
+use XzSoftware\WykopSDK\Links\Links;
 use XzSoftware\WykopSDK\Profile\Profiles;
 use XzSoftware\WykopSDK\UserManagement\UserManagement;
 
@@ -82,6 +84,26 @@ class SDK
     public function addLink(): AddLink
     {
         return new AddLink($this->client);
+    }
+
+    /**
+     * Hits module
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Hits/
+     * @return Hits
+     */
+    public function hits(): Hits
+    {
+        return new Hits($this->client);
+    }
+
+    /**
+     * Links module
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Links/
+     * @return Links
+     */
+    public function links(): Links
+    {
+        return new Links($this->client);
     }
 
 }
