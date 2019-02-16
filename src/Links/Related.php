@@ -12,6 +12,8 @@ declare(strict_types=1);
 namespace XzSoftware\WykopSDK\Links;
 
 use XzSoftware\WykopSDK\Client;
+use XzSoftware\WykopSDK\Links\Request\GetRelated;
+use XzSoftware\WykopSDK\Links\Response\RelatedLinks;
 
 class Related
 {
@@ -26,8 +28,18 @@ class Related
         $this->client = $client;
     }
 
-    public function get(){}
-    public function add(){}
+    public function get(GetRelated $getRelated): RelatedLinks
+    {
+        $getRelated
+            ->getResponseBuilder()
+            ->build($this->client->handle($getRelated));
+    }
+
+    public function add()
+    {
+
+    }
+
     public function voteUp(){}
     public function voteDown(){}
 }
