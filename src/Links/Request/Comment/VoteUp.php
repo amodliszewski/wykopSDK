@@ -9,12 +9,12 @@ declare(strict_types=1);
  * Time: 19:26
  */
 
-namespace XzSoftware\WykopSDK\Links\Request;
+namespace XzSoftware\WykopSDK\Links\Request\Comment;
 
-class CommentVoteDown extends CommentVote
+class VoteUp extends Vote
 {
     public function getPrefix(): string
     {
-        return 'Links/CommentVoteDown/' . $this->id . '/' . $this->commentId . '/';
+        return 'Links/CommentVoteUp/' . $this->id . '/' . $this->commentId . '/';
     }
 }

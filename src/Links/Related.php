@@ -12,8 +12,12 @@ declare(strict_types=1);
 namespace XzSoftware\WykopSDK\Links;
 
 use XzSoftware\WykopSDK\Client;
-use XzSoftware\WykopSDK\Links\Request\GetRelated;
+use XzSoftware\WykopSDK\Links\Request\Related\Add;
+use XzSoftware\WykopSDK\Links\Request\Related\GetAll;
+use XzSoftware\WykopSDK\Links\Request\Related\Vote;
 use XzSoftware\WykopSDK\Links\Response\RelatedLinks;
+use XzSoftware\WykopSDK\Links\Response\Votes;
+use XzSoftware\WykopSDK\ResponseObjects\RelatedLink;
 
 class Related
 {
@@ -28,18 +32,23 @@ class Related
         $this->client = $client;
     }
 
-    public function get(GetRelated $getRelated): RelatedLinks
+    public function get(GetAll $getRelated): RelatedLinks
     {
-        $getRelated
+        return $getRelated
             ->getResponseBuilder()
             ->build($this->client->handle($getRelated));
     }
 
-    public function add()
+    public function add(Add $related): RelatedLink
     {
-
+        return $related
+            ->getResponseBuilder()
+            ->build($this->client->handle($related));
     }
 
-    public function voteUp(){}
-    public function voteDown(){}
+    public function vote(Vote $vote): int
+    {
+        $data = $this->client->handle($vote);
+        return $data['data']['vote_count'];
+    }
 }

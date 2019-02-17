@@ -5,32 +5,29 @@ declare(strict_types=1);
  * Smart code for smart wallet
  * http://xzsoftware.pl
  * User adrianmodliszewski
- * Date: 15/02/2019
- * Time: 21:23
+ * Date: 16/02/2019
+ * Time: 21:33
  */
 
-namespace XzSoftware\WykopSDK\Links\Request;
+namespace XzSoftware\WykopSDK\Links\Request\Comment;
 
 use XzSoftware\WykopSDK\Links\Builder\CommentBuilder;
 use XzSoftware\WykopSDK\RequestObjects\PostObject;
 
-class CommentAdd extends PostObject
+class Edit extends PostObject
 {
     /** @var int */
-    private $linkId;
-    /** @var int */
-    private $commentId;
+    private $id;
 
     /**
      * CommentAdd constructor.
-     * @param int $linkId
+     * @param int $id
      * @param string $body
      * @param string|resource|null $embed
      */
-    public function __construct(int $linkId, string $body, ?int $commentId = null, $embed = null)
+    public function __construct(int $id, string $body, $embed = null)
     {
-        $this->linkId = $linkId;
-        $this->commentId = $commentId;
+        $this->id = $id;
         $this->setBody($body);
 
         if (is_resource($embed)) {
@@ -65,11 +62,7 @@ class CommentAdd extends PostObject
 
     public function getPrefix(): string
     {
-        if (!empty($this->commentId)) {
-            return 'Links/CommentAdd/' . $this->linkId . '/' . $this->commentId . '/';
-        }
-
-        return 'Links/CommentAdd/' . $this->linkId . '/';
+        return 'Links/CommentEdit/' . $this->id . '/';
     }
 
     public function isValid(): bool

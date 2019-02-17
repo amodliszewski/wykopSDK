@@ -13,13 +13,13 @@ namespace XzSoftware\WykopSDK\Links;
 
 use XzSoftware\WykopSDK\Client;
 
-use XzSoftware\WykopSDK\Links\Request\CommentAdd;
-use XzSoftware\WykopSDK\Links\Request\CommentEdit;
-use XzSoftware\WykopSDK\Links\Request\CommentVote;
-use XzSoftware\WykopSDK\Links\Request\GetAll;
-use XzSoftware\WykopSDK\Links\Request\GetComment;
+use XzSoftware\WykopSDK\Links\Request\Comment\Add;
+use XzSoftware\WykopSDK\Links\Request\Comment\Edit;
+use XzSoftware\WykopSDK\Links\Request\Comment\Vote;
+use XzSoftware\WykopSDK\Links\Request\Comment\Get;
+use XzSoftware\WykopSDK\Links\Request\Comment\GetAll;
 use XzSoftware\WykopSDK\Links\Response\Comments as CommentsResponse;
-use XzSoftware\WykopSDK\Links\Response\Votes;
+use XzSoftware\WykopSDK\Links\Response\CommentVotes;
 use XzSoftware\WykopSDK\ResponseObjects\Comment;
 
 class Comments
@@ -43,28 +43,30 @@ class Comments
             ->build($this->client->handle($all));
     }
 
-    public function vote(CommentVote $commentVote): Votes
+    public function vote(Vote $commentVote): CommentVotes
     {
         return $commentVote
             ->getResponseBuilder()
             ->build($this->client->handle($commentVote));
     }
 
-    public function add(CommentAdd $add): Comment
+    public function add(Add $add): Comment
     {
+        $data = $this->client->handle($add);
+        var_dump($data);
         return $add
             ->getResponseBuilder()
-            ->build($this->client->handle($add));
+            ->build($data);
     }
 
-    public function edit(CommentEdit $edit): Comment
+    public function edit(Edit $edit): Comment
     {
         return $edit
             ->getResponseBuilder()
             ->build($this->client->handle($edit));
     }
 
-    public function get(GetComment $comment): Comment
+    public function get(Get $comment): Comment
     {
         return $comment
             ->getResponseBuilder()

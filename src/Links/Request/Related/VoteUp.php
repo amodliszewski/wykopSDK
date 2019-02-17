@@ -5,16 +5,16 @@ declare(strict_types=1);
  * Smart code for smart wallet
  * http://xzsoftware.pl
  * User adrianmodliszewski
- * Date: 14/02/2019
- * Time: 19:26
+ * Date: 17/02/2019
+ * Time: 10:51
  */
 
-namespace XzSoftware\WykopSDK\Links\Request;
+namespace XzSoftware\WykopSDK\Links\Request\Related;
 
-class CommentVoteUp extends CommentVote
+class VoteUp extends Vote
 {
     public function getPrefix(): string
     {
-        return 'Links/CommentVoteUp/' . $this->id . '/' . $this->commentId . '/';
+        return 'Links/RelatedVoteUp/' . $this->id . '/' . $this->relatedLinkId . '/';
     }
 }

@@ -9,12 +9,12 @@ declare(strict_types=1);
  * Time: 21:50
  */
 
-namespace XzSoftware\WykopSDK\Links\Request;
+namespace XzSoftware\WykopSDK\Links\Request\Related;
 
 use XzSoftware\WykopSDK\Links\Builder\RelatedLinksBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
 
-class GetRelated extends GetObject
+class GetAll extends GetObject
 {
     /** @var int */
     private $id;

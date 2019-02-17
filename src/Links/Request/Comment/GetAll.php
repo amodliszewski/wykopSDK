@@ -9,7 +9,7 @@ declare(strict_types=1);
  * Time: 21:02
  */
 
-namespace XzSoftware\WykopSDK\Links\Request;
+namespace XzSoftware\WykopSDK\Links\Request\Comment;
 
 use XzSoftware\WykopSDK\Links\Builder\CommentsBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;

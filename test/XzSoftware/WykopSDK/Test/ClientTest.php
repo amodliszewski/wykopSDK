@@ -10,9 +10,21 @@
 
 namespace XzSoftware\WykopSDK\Test;
 
+use PHPUnit\Framework\TestCase;
 use XzSoftware\WykopSDK\Client;
+use XzSoftware\WykopSDK\Signer;
 
-class ClientTest extends \PHPUnit_Framework_TestCase
+class ClientTest extends TestCase
 {
+    /**
+     * @test
+     */
+    public function shouldReturnProperConnectLink()
+    {
+        $testSub = new Client(new \GuzzleHttp\Client(), new Signer('secret'), 'key', 'secret');
 
+        $redirect = $testSub->getConnectLink('Haha!');
+        $expected = 'https://a2.wykop.pl/Login/Connect/appkey/key/redirect/SGFoYSE%3D/secure/f506577272e4e8fa098161f0d59a3923';
+        self::assertEquals($expected, $redirect);
+    }
 }

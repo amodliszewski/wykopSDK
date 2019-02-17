@@ -52,6 +52,18 @@ class Comment
 
     public static function buildFromRaw(array $data): Comment
     {
+        if (array_key_exists('blocked', $data)) {
+            $data['is_blocked'] = $data['blocked'];
+        }
+
+        if (array_key_exists('favorite', $data)) {
+            $data['is_favourite'] = $data['favorite'];
+        }
+
+        if (array_key_exists('link_id', $data)) {
+            $data['link'] = (int) $data['link_id'];
+        }
+
         return new Comment(
             $data['id'],
             new \DateTime($data['date']),
@@ -66,7 +78,7 @@ class Comment
             $data['is_blocked'],
             $data['is_favourite'],
             $data['link'],
-            Embed::buildFromRaw($data['embed']),
+            !empty($data['embed']) ? Embed::buildFromRaw($data['embed']) : null,
             $data['app'],
             $data['violation_url'],
             $data['vote_count_minus'],
