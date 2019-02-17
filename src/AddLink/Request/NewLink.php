@@ -37,7 +37,7 @@ class NewLink extends PostObject
 
     public function setDraftKey(string $key): self
     {
-        $this->getParams['key'] = $key;
+        $this->urlParams['key'] = $key;
         return $this;
     }
 
@@ -89,7 +89,7 @@ class NewLink extends PostObject
             !empty($this->postParams['title']) &&
             !empty($this->postParams['description']) &&
             !empty($this->postParams['tags']) &&
-            !empty($this->getParams['key']);
+            !empty($this->urlParams['key']);
     }
 
     public function getResponseBuilder()

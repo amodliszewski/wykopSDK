@@ -5,31 +5,31 @@ declare(strict_types=1);
  * Smart code for smart wallet
  * http://xzsoftware.pl
  * User adrianmodliszewski
- * Date: 27/01/2019
- * Time: 17:02
+ * Date: 28/01/2019
+ * Time: 18:55
  */
 
-namespace XzSoftware\WykopSDK\Profile\Response;
+namespace XzSoftware\WykopSDK\MyWykop\Response;
 
-use XzSoftware\WykopSDK\ResponseObjects\Action;
+use XzSoftware\WykopSDK\ResponseObjects\Entry;
 use XzSoftware\WykopSDK\ResponseObjects\Pagination;
 
-class Actions
+class Entries
 {
-    /** @var Action[] */
-    private $actions;
+    /** @var Entry[] */
+    private $entries;
     /** @var Pagination */
     private $pagination;
 
-    public function __construct(array $actions, Pagination $pagination)
+    public function __construct(array $entries, Pagination $pagination)
     {
-        $this->actions = $actions;
+        $this->entries = $entries;
         $this->pagination = $pagination;
     }
 
-    public function getActions(): array
+    public function getEntries(): array
     {
-        return $this->actions;
+        return $this->entries;
     }
 
     public function getPagination(): Pagination

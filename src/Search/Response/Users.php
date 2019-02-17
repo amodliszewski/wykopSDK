@@ -6,30 +6,33 @@ declare(strict_types=1);
  * http://xzsoftware.pl
  * User adrianmodliszewski
  * Date: 27/01/2019
- * Time: 17:02
+ * Time: 21:54
  */
 
-namespace XzSoftware\WykopSDK\Profile\Response;
+namespace XzSoftware\WykopSDK\Search\Response;
 
-use XzSoftware\WykopSDK\ResponseObjects\Action;
 use XzSoftware\WykopSDK\ResponseObjects\Pagination;
+use XzSoftware\WykopSDK\ResponseObjects\User;
 
-class Actions
+class Users
 {
-    /** @var Action[] */
-    private $actions;
+    /** @var User[] */
+    private $users;
     /** @var Pagination */
     private $pagination;
 
-    public function __construct(array $actions, Pagination $pagination)
+    public function __construct(array $users, Pagination $pagination)
     {
-        $this->actions = $actions;
+        $this->users = $users;
         $this->pagination = $pagination;
     }
 
-    public function getActions(): array
+    /**
+     * @return User[]
+     */
+    public function getFollowers(): array
     {
-        return $this->actions;
+        return $this->users;
     }
 
     public function getPagination(): Pagination

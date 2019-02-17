@@ -16,7 +16,14 @@ use XzSoftware\WykopSDK\AddLink\AddLink;
 use XzSoftware\WykopSDK\Entries\Entries;
 use XzSoftware\WykopSDK\Hits\Hits;
 use XzSoftware\WykopSDK\Links\Links;
+use XzSoftware\WykopSDK\MyWykop\MyWykop;
+use XzSoftware\WykopSDK\Notifications\Notifications;
+use XzSoftware\WykopSDK\PrivateMessages\PrivateMessages;
 use XzSoftware\WykopSDK\Profile\Profiles;
+use XzSoftware\WykopSDK\Search\Search;
+use XzSoftware\WykopSDK\Settings\Settings;
+use XzSoftware\WykopSDK\Suggest\Suggest;
+use XzSoftware\WykopSDK\Tags\Tags;
 use XzSoftware\WykopSDK\UserManagement\UserManagement;
 
 class SDK
@@ -106,4 +113,68 @@ class SDK
         return new Links($this->client);
     }
 
+    /**
+     * Tags module
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Tags/
+     * @return Tags
+     */
+    public function tags(): Tags
+    {
+        return new Tags($this->client);
+    }
+
+    /**
+     * MyWykop module
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Mywykop/
+     * @return MyWykop
+     */
+    public function myWykop(): MyWykop
+    {
+        return new MyWykop($this->client);
+    }
+
+    /**
+     * Notifications module
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Notifications/
+     * @return Notifications
+     */
+    public function notifications(): Notifications
+    {
+        return new Notifications($this->client);
+    }
+
+    /**
+     * PM module
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Pm/
+     * @return PrivateMessages
+     */
+    public function privateMessages(): PrivateMessages
+    {
+        return new PrivateMessages($this->client);
+    }
+
+    /**
+     * Search module
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Search/
+     * @return Search
+     */
+    public function search(): Search
+    {
+        return new Search($this->client);
+    }
+
+    /**
+     * Settings module
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Settings/
+     * @return Settings
+     */
+    public function settings(): Settings
+    {
+        return new Settings($this->client);
+    }
+
+    public function suggest(): Suggest
+    {
+        return new Suggest($this->client);
+    }
 }

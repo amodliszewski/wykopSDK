@@ -32,7 +32,7 @@ class Image extends PostObject
 
     public function setDraftKey(string $key): self
     {
-        $this->getParams['key'] = $key;
+        $this->urlParams['key'] = $key;
         return $this;
     }
 

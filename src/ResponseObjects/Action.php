@@ -9,7 +9,7 @@ declare(strict_types=1);
  * Time: 17:05
  */
 
-namespace XzSoftware\WykopSDK\Profile\Response;
+namespace XzSoftware\WykopSDK\ResponseObjects;
 
 use XzSoftware\WykopSDK\ResponseObjects\Entry;
 use XzSoftware\WykopSDK\ResponseObjects\Link;

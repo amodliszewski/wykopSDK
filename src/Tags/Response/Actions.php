@@ -9,7 +9,7 @@ declare(strict_types=1);
  * Time: 17:02
  */
 
-namespace XzSoftware\WykopSDK\Profile\Response;
+namespace XzSoftware\WykopSDK\Tags\Response;
 
 use XzSoftware\WykopSDK\ResponseObjects\Action;
 use XzSoftware\WykopSDK\ResponseObjects\Pagination;
