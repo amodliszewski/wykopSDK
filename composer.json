@@ -2,6 +2,7 @@
     "name": "xzsoftware/wykopsdk",
     "description": "SDK dla Api v2 Wykopu",
     "type": "library",
+    "keywords": ["wykop", "sdk", "wykopsdk", "wykopapi", "api"],
     "require": {
         "php": "^7.1",
         "guzzlehttp/guzzle": "^6.3",
