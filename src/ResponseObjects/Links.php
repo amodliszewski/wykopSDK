@@ -9,12 +9,11 @@ declare(strict_types=1);
  * Time: 18:10
  */
 
-namespace XzSoftware\WykopSDK\Profile\Response;
+namespace XzSoftware\WykopSDK\ResponseObjects;
 
-use XzSoftware\WykopSDK\ResponseObjects\Link;
-use XzSoftware\WykopSDK\ResponseObjects\Pagination;
+use ArrayIterator;
 
-class Links
+class Links implements \IteratorAggregate
 {
     /** @var Link[] */
     private $links;
@@ -35,5 +34,10 @@ class Links
     public function getPagination(): Pagination
     {
         return $this->pagination;
+    }
+
+    public function getIterator()
+    {
+        return new ArrayIterator($this->links);
     }
 }

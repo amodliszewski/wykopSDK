@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace XzSoftware\WykopSDK\Profile\Request;
 
-use XzSoftware\WykopSDK\Profile\Builder\ActionsBuilder;
+use XzSoftware\WykopSDK\Builders\ActionsBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
 
 class Actions extends GetObject

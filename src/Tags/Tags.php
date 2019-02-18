@@ -21,10 +21,10 @@ use XzSoftware\WykopSDK\Tags\Request\Notify;
 use XzSoftware\WykopSDK\Tags\Request\Observe;
 use XzSoftware\WykopSDK\Tags\Request\Unblock;
 use XzSoftware\WykopSDK\Tags\Request\Unobserve;
-use XzSoftware\WykopSDK\Tags\Response\Actions;
-use XzSoftware\WykopSDK\Tags\Response\Entries as EntriesResponse;
-use XzSoftware\WykopSDK\Tags\Response\Links as LinksResponse;
 use XzSoftware\WykopSDK\Tags\Response\Status;
+use XzSoftware\WykopSDK\ResponseObjects\Actions;
+use XzSoftware\WykopSDK\ResponseObjects\Entries as EntriesResponse;
+use XzSoftware\WykopSDK\ResponseObjects\Links as LinksResponse;
 
 class Tags
 {

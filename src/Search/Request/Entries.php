@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace XzSoftware\WykopSDK\Search\Request;
 
 use XzSoftware\WykopSDK\RequestObjects\PostObject;
-use XzSoftware\WykopSDK\Search\Builder\EntriesBuilder;
+use XzSoftware\WykopSDK\Builders\EntriesBuilder;
 
 class Entries extends PostObject
 {

@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace XzSoftware\WykopSDK\Profile\Request;
 
 
-use XzSoftware\WykopSDK\Profile\Builder\ProfilesBuilder;
+use XzSoftware\WykopSDK\Builders\UsersBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
 
 class Rank extends GetObject
@@ -37,8 +37,8 @@ class Rank extends GetObject
         return true;
     }
 
-    public function getResponseBuilder(): ProfilesBuilder
+    public function getResponseBuilder(): UsersBuilder
     {
-        return new ProfilesBuilder();
+        return new UsersBuilder();
     }
 }

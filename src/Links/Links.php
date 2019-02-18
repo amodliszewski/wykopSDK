@@ -21,10 +21,10 @@ use XzSoftware\WykopSDK\Links\Request\Top;
 use XzSoftware\WykopSDK\Links\Request\Upcoming;
 use XzSoftware\WykopSDK\Links\Request\Upvoters;
 use XzSoftware\WykopSDK\Links\Request\Vote;
-use XzSoftware\WykopSDK\Links\Response\Links as LinksResponse;
 use XzSoftware\WykopSDK\Links\Response\Voters;
 use XzSoftware\WykopSDK\Links\Response\Votes;
 use XzSoftware\WykopSDK\ResponseObjects\Link;
+use XzSoftware\WykopSDK\ResponseObjects\Links as LinksResponse;
 
 class Links
 {

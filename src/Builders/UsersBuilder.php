@@ -9,13 +9,13 @@ declare(strict_types=1);
  * Time: 22:20
  */
 
-namespace XzSoftware\WykopSDK\Profile\Builder;
+namespace XzSoftware\WykopSDK\Builders;
 
-use XzSoftware\WykopSDK\Profile\Response\Users;
+use XzSoftware\WykopSDK\ResponseObjects\Users;
 use XzSoftware\WykopSDK\ResponseObjects\Pagination;
 use XzSoftware\WykopSDK\ResponseObjects\User;
 
-class ProfilesBuilder
+class UsersBuilder
 {
     public function build(array $data): Users
     {

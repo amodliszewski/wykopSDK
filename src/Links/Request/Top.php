@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace XzSoftware\WykopSDK\Links\Request;
 
-use XzSoftware\WykopSDK\Links\Builder\LinksBuilder;
+use XzSoftware\WykopSDK\Builders\LinksBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
 
 class Top extends GetObject

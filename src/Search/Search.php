@@ -15,9 +15,9 @@ use XzSoftware\WykopSDK\Client;
 use XzSoftware\WykopSDK\Search\Request\Entries;
 use XzSoftware\WykopSDK\Search\Request\Links;
 use XzSoftware\WykopSDK\Search\Request\Profiles;
-use XzSoftware\WykopSDK\Search\Response\Entries as EntriesResponse;
-use XzSoftware\WykopSDK\Search\Response\Links as LinksResponse;
-use XzSoftware\WykopSDK\Search\Response\Users;
+use XzSoftware\WykopSDK\ResponseObjects\Users;
+use XzSoftware\WykopSDK\ResponseObjects\Entries as EntriesResponse;
+use XzSoftware\WykopSDK\ResponseObjects\Links as LinksResponse;
 
 class Search
 {

@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace XzSoftware\WykopSDK\Entries\Request;
 
-use XzSoftware\WykopSDK\Entries\Builder\EntriesBuilder;
 use XzSoftware\WykopSDK\Entries\Builder\EntryBuilder;
 use XzSoftware\WykopSDK\RequestObjects\PostObject;
 use XzSoftware\WykopSDK\RequestObjects\Survey;

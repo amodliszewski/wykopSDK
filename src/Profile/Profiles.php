@@ -13,7 +13,7 @@ namespace XzSoftware\WykopSDK\Profile;
 
 use XzSoftware\WykopSDK\Client;
 
-use XzSoftware\WykopSDK\Entries\Response\Entries as EntriesResponse;
+use XzSoftware\WykopSDK\ResponseObjects\Entries as EntriesResponse;
 use XzSoftware\WykopSDK\Profile\Request\Actions;
 use XzSoftware\WykopSDK\Profile\Request\AddedLinks;
 use XzSoftware\WykopSDK\Profile\Request\Badges;
@@ -31,14 +31,14 @@ use XzSoftware\WykopSDK\Profile\Request\Profile;
 use XzSoftware\WykopSDK\Profile\Request\PublishedLinks;
 use XzSoftware\WykopSDK\Profile\Request\Rank;
 use XzSoftware\WykopSDK\Profile\Request\Related;
-use XzSoftware\WykopSDK\Profile\Response\Actions as ActionsResponse;
 use XzSoftware\WykopSDK\Profile\Response\Badges as BadgesResponse;
 use XzSoftware\WykopSDK\Profile\Response\Comments as CommentsResponse;
-use XzSoftware\WykopSDK\Profile\Response\Links;
 use XzSoftware\WykopSDK\Profile\Response\Related as RelatedResponse;
 use XzSoftware\WykopSDK\Profile\Response\Status;
-use XzSoftware\WykopSDK\Profile\Response\Users;
+use XzSoftware\WykopSDK\ResponseObjects\Actions as ActionsResponse;
+use XzSoftware\WykopSDK\ResponseObjects\Users;
 use XzSoftware\WykopSDK\ResponseObjects\Color;
+use XzSoftware\WykopSDK\ResponseObjects\Links;
 use XzSoftware\WykopSDK\ResponseObjects\User;
 use XzSoftware\WykopSDK\UserManagement\Request\Block;
 use XzSoftware\WykopSDK\UserManagement\Request\Observe;

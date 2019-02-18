@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace XzSoftware\WykopSDK\MyWykop\Request;
 
-use XzSoftware\WykopSDK\MyWykop\Builder\LinksBuilder;
+use XzSoftware\WykopSDK\Builders\LinksBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
 
 class Links extends GetObject

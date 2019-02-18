@@ -9,9 +9,9 @@ declare(strict_types=1);
  * Time: 18:59
  */
 
-namespace XzSoftware\WykopSDK\MyWykop\Builder;
+namespace XzSoftware\WykopSDK\Builders;
 
-use XzSoftware\WykopSDK\MyWykop\Response\Entries;
+use XzSoftware\WykopSDK\ResponseObjects\Entries;
 use XzSoftware\WykopSDK\ResponseObjects\Entry;
 use XzSoftware\WykopSDK\ResponseObjects\Pagination;
 

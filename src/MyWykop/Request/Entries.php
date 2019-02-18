@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace XzSoftware\WykopSDK\MyWykop\Request;
 
-use XzSoftware\WykopSDK\MyWykop\Builder\EntriesBuilder;
+use XzSoftware\WykopSDK\Builders\EntriesBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
 
 class Entries extends GetObject

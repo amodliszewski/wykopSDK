@@ -9,12 +9,11 @@ declare(strict_types=1);
  * Time: 18:55
  */
 
-namespace XzSoftware\WykopSDK\Search\Response;
+namespace XzSoftware\WykopSDK\ResponseObjects;
 
-use XzSoftware\WykopSDK\ResponseObjects\Entry;
-use XzSoftware\WykopSDK\ResponseObjects\Pagination;
+use ArrayIterator;
 
-class Entries
+class Entries implements \IteratorAggregate
 {
     /** @var Entry[] */
     private $entries;
@@ -35,5 +34,10 @@ class Entries
     public function getPagination(): Pagination
     {
         return $this->pagination;
+    }
+
+    public function getIterator()
+    {
+        return new ArrayIterator($this->entries);
     }
 }

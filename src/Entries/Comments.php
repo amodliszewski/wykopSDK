@@ -18,8 +18,8 @@ use XzSoftware\WykopSDK\Entries\Request\CommentVoteUp;
 use XzSoftware\WykopSDK\Entries\Request\EditComment;
 use XzSoftware\WykopSDK\Entries\Request\GetComment;
 use XzSoftware\WykopSDK\Entries\Request\ObservedComments;
-use XzSoftware\WykopSDK\Entries\Response\Entries;
 use XzSoftware\WykopSDK\Entries\Response\Votes;
+use XzSoftware\WykopSDK\ResponseObjects\Entries;
 use XzSoftware\WykopSDK\ResponseObjects\Entry;
 
 class Comments

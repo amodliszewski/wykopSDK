@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace XzSoftware\WykopSDK\Tags\Request;
 
+use XzSoftware\WykopSDK\Builders\ActionsBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
-use XzSoftware\WykopSDK\Tags\Builder\ActionsBuilder;
 
 class Index extends GetObject
 {

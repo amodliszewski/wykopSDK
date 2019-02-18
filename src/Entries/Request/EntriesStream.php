@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace XzSoftware\WykopSDK\Entries\Request;
 
-use XzSoftware\WykopSDK\Entries\Builder\EntriesBuilder;
+use XzSoftware\WykopSDK\Builders\EntriesBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
 
 class EntriesStream extends GetObject

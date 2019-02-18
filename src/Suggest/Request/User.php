@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace XzSoftware\WykopSDK\Suggest\Request;
 
-use XzSoftware\WykopSDK\Suggest\Builder\UsersBuilder;
+use XzSoftware\WykopSDK\Builders\UsersBuilder;
 use XzSoftware\WykopSDK\RequestObjects\GetObject;
 
 class User extends GetObject

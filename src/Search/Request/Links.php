@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace XzSoftware\WykopSDK\Search\Request;
 
+use XzSoftware\WykopSDK\Builders\LinksBuilder;
 use XzSoftware\WykopSDK\RequestObjects\PostObject;
-use XzSoftware\WykopSDK\Search\Builder\LinksBuilder;
 
 class Links extends PostObject
 {

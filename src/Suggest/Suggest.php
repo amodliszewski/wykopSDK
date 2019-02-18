@@ -14,7 +14,7 @@ namespace XzSoftware\WykopSDK\Suggest;
 use XzSoftware\WykopSDK\Client;
 use XzSoftware\WykopSDK\Suggest\Request\Tag;
 use XzSoftware\WykopSDK\Suggest\Request\User;
-use XzSoftware\WykopSDK\Suggest\Response\Users;
+use XzSoftware\WykopSDK\ResponseObjects\Users;
 
 class Suggest
 {

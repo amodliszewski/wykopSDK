@@ -18,9 +18,9 @@ use XzSoftware\WykopSDK\MyWykop\Request\Index;
 use XzSoftware\WykopSDK\MyWykop\Request\Links;
 use XzSoftware\WykopSDK\MyWykop\Request\Tags;
 use XzSoftware\WykopSDK\MyWykop\Request\Users;
-use XzSoftware\WykopSDK\MyWykop\Response\Actions;
-use XzSoftware\WykopSDK\MyWykop\Response\Entries as EntriesResponse;
-use XzSoftware\WykopSDK\MyWykop\Response\Links as LinksResponse;
+use XzSoftware\WykopSDK\ResponseObjects\Actions;
+use XzSoftware\WykopSDK\ResponseObjects\Entries as EntriesResponse;
+use XzSoftware\WykopSDK\ResponseObjects\Links as LinksResponse;
 
 class MyWykop
 {

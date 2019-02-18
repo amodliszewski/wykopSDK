@@ -173,6 +173,11 @@ class SDK
         return new Settings($this->client);
     }
 
+    /**
+     * Suggest Module
+     * @link https://www.wykop.pl/dla-programistow/apiv2docs/package/Settings/
+     * @return Suggest
+     */
     public function suggest(): Suggest
     {
         return new Suggest($this->client);

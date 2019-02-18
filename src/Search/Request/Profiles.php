@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace XzSoftware\WykopSDK\Search\Request;
 
+use XzSoftware\WykopSDK\Builders\UsersBuilder;
 use XzSoftware\WykopSDK\RequestObjects\PostObject;
-use XzSoftware\WykopSDK\Search\Builder\ProfilesBuilder;
 
 class Profiles extends PostObject
 {
@@ -36,8 +36,8 @@ class Profiles extends PostObject
         return strlen($this->postParams['q']) > 3;
     }
 
-    public function getResponseBuilder(): ProfilesBuilder
+    public function getResponseBuilder(): UsersBuilder
     {
-        return new ProfilesBuilder();
+        return new UsersBuilder();
     }
 }
