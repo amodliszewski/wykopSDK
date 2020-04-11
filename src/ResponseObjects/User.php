@@ -76,35 +76,35 @@ class User
             $data['sex'],
             $data['avatar'],
             new UserDetails(
-                $data['email'],
-                $data['about'],
-                $data['name'],
-                $data['www'],
-                $data['jabber'],
-                $data['gg'],
-                $data['city'],
-                $data['facebook'],
-                $data['twitter'],
-                $data['instagram']
+                isset($data['email']) ? $data['email'] : null,
+                isset($data['about']) ? $data['about'] : null,
+                isset($data['name']) ? $data['name'] : null,
+                isset($data['www']) ? $data['www'] : null,
+                isset($data['jabber']) ? $data['jabber'] : null,
+                isset($data['gg']) ? $data['gg'] : null,
+                isset($data['city']) ? $data['city'] : null,
+                isset($data['facebook']) ? $data['facebook'] : null,
+                isset($data['twitter']) ? $data['twitter'] : null,
+                isset($data['instagram']) ? $data['instagram'] : null
             ),
             new UserCounts(
-                $data['links_added_count'],
-                $data['links_published_count'],
-                $data['comments_count'],
-                $data['rank'],
-                $data['followers'],
-                $data['following'],
-                $data['entries'],
-                $data['entriesComments'],
-                $data['diggs'],
-                $data['buries']
+                isset($data['links_added_count']) ? $data['links_added_count'] : null,
+                isset($data['links_published_count']) ? $data['links_published_count'] : null,
+                isset($data['comments_count']) ? $data['comments_count'] : null,
+                isset($data['rank']) ? $data['rank'] : null,
+                isset($data['followers']) ? $data['followers'] : null,
+                isset($data['following']) ? $data['following'] : null,
+                isset($data['entries']) ? $data['entries'] : null,
+                isset($data['entriesComments']) ? $data['entriesComments'] : null,
+                isset($data['diggs']) ? $data['diggs'] : null,
+                isset($data['buries']) ? $data['buries'] : null
             ),
             !empty($data['signup_at']) ? new DateTime($data['signup_at']) : null,
-            $data['background'],
-            $data['is_verified'],
-            $data['is_observed'],
-            $data['is_blocked'],
-            $data['violation_url']
+            isset($data['background']) ? $data['background'] : null,
+            isset($data['is_verified']) ? $data['is_verified'] : null,
+            isset($data['is_observed']) ? $data['is_observed'] : null,
+            isset($data['is_blocked']) ? $data['is_blocked'] : null,
+            isset($data['violation_url']) ? $data['violation_url'] : null
         );
     }
 

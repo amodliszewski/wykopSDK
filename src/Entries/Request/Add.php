@@ -90,6 +90,6 @@ class Add extends PostObject
 
     public function getResponseBuilder(): EntryBuilder
     {
-        new EntryBuilder();
+        return new EntryBuilder();
     }
 }
