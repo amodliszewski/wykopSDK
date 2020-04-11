@@ -54,7 +54,7 @@ class Add extends PostObject
         return $this;
     }
 
-    public function setEmbedFile(resource $file)
+    public function setEmbedFile($file)
     {
         $meta_data = stream_get_meta_data($file);
         $path = explode(DIRECTORY_SEPARATOR, $meta_data["uri"]);

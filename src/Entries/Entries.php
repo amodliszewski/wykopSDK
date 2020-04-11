@@ -17,6 +17,7 @@ use XzSoftware\WykopSDK\Entries\Request\Add;
 use XzSoftware\WykopSDK\Entries\Request\Delete;
 use XzSoftware\WykopSDK\Entries\Request\Edit;
 use XzSoftware\WykopSDK\Entries\Request\EntriesStream;
+use XzSoftware\WykopSDK\Entries\Request\Get;
 use XzSoftware\WykopSDK\Entries\Request\Hot;
 use XzSoftware\WykopSDK\Entries\Request\Observed;
 use XzSoftware\WykopSDK\Entries\Request\ToggleFavourite;
@@ -78,6 +79,14 @@ class Entries
         return $newEntry
             ->getResponseBuilder()
             ->build($this->client->handle($newEntry));
+    }
+
+    public function get(int $id): Entry
+    {
+        $request = new Get($id);
+        return $request
+            ->getResponseBuilder()
+            ->build($this->client->handle($request));
     }
 
     public function edit(Edit $editEntry): Entry
