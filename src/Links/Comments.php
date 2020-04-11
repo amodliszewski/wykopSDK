@@ -53,7 +53,6 @@ class Comments
     public function add(Add $add): Comment
     {
         $data = $this->client->handle($add);
-        var_dump($data);
         return $add
             ->getResponseBuilder()
             ->build($data);

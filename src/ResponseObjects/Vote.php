@@ -13,7 +13,7 @@ namespace XzSoftware\WykopSDK\ResponseObjects;
 
 class Vote
 {
-    /** @var int */
+    /** @var User */
     private $author;
     /** @var array */
     private $voteType;
@@ -28,9 +28,9 @@ class Vote
     }
 
     /**
-     * @return int
+     * @return User
      */
-    public function getAuthor(): int
+    public function getAuthor(): User
     {
         return $this->author;
     }

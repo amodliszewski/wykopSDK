@@ -13,6 +13,7 @@ namespace XzSoftware\WykopSDK\Entries;
 
 use XzSoftware\WykopSDK\Client;
 use XzSoftware\WykopSDK\Entries\Request\AddComment;
+use XzSoftware\WykopSDK\Entries\Request\CommentUpvoters;
 use XzSoftware\WykopSDK\Entries\Request\CommentVoteRemove;
 use XzSoftware\WykopSDK\Entries\Request\CommentVoteUp;
 use XzSoftware\WykopSDK\Entries\Request\EditComment;
@@ -51,6 +52,14 @@ class Comments
         return $editComment
             ->getResponseBuilder()
             ->build($this->client->handle($editComment));
+    }
+
+    public function upvoters(int $id): Votes
+    {
+        $vote = new CommentUpvoters($id);
+        return $vote
+            ->getResponseBuilder()
+            ->build($this->client->handle($vote), 'data');
     }
 
     public function voteUp(int $id): Votes

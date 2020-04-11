@@ -56,18 +56,18 @@ class Entry
             $data['body'],
             User::buildFromRaw($data['author']),
             !empty($data['author']) ? User::buildFromRaw($data['author']) : null,
-            $data['is_blocked'],
-            $data['is_favourite'],
+            $data['blocked'],
+            $data['favorite'],
             $data['vote_count'],
             $data['comments_count'],
             !empty($data['comment']) ? Comment::buildFromRaw($data['comment']) : null,
             !empty($data['survey']) ? Survey::buildFromRaw($data['survey']) : null,
             !empty($data['embed']) ? Embed::buildFromRaw($data['embed']) : null,
             $data['status'],
-            $data['can_comment'],
+            $data['can_comment'] ?? true,
             $data['user_vote'],
-            $data['app'],
-            $data['violation_url']
+            $data['app'] ?? null,
+            $data['violation_url'] ?? null
         );
     }
 

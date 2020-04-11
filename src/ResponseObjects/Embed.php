@@ -55,12 +55,12 @@ class Embed
         return new Embed(
             $data['type'],
             $data['url'],
-            $data['source'],
+            $data['source'] ?? null,
             $data['preview'],
             $data['plus18'],
-            $data['size'],
+            $data['size'] ?? null,
             $data['animated'],
-            $data['ratio']
+            $data['ratio'] ?? null
         );
     }
 

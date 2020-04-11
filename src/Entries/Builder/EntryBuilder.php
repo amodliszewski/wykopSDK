@@ -19,6 +19,6 @@ class EntryBuilder
 {
     public function build(array $data): Entry
     {
-        return Entry::buildFromRaw($data);
+        return Entry::buildFromRaw($data['data']);
     }
 }
