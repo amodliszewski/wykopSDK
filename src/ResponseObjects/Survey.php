@@ -31,7 +31,7 @@ class Survey
         return new Survey(
             $data['question'],
             $answers,
-            $data['user_answer']
+            $data['user_answer'] ?? null
         );
     }
 
