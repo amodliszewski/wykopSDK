@@ -31,13 +31,10 @@ class SDK
     public const API_PREFIX = 'https://a2.wykop.pl/';
     /** @var Client */
     private $client;
-    /** @var Builder */
-    private $builder;
 
-    private function __construct(Client $client, Builder $builder)
+    private function __construct(Client $client)
     {
         $this->client = $client;
-        $this->builder = $builder;
     }
 
     /**
@@ -48,8 +45,7 @@ class SDK
     public static function buildNewSDK(string $appKey, string $appSecret)
     {
         return new self(
-            new Client(new HttpClient(), new Signer($appSecret), $appKey, $appSecret),
-            new Builder()
+            new Client(new HttpClient(), new Signer($appSecret), $appKey, $appSecret)
         );
     }
 
